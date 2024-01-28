@@ -19,8 +19,8 @@ class UserServices {
         }
     }
 
-    static async generateToken(tokenData, secratkey) {
-        return jwt.sign(tokenData, secratkey);
+    static async generateToken(tokenData, secratkey, jwt_expire) {
+        return jwt.sign(tokenData, secratkey, { expiresIn: jwt_expire });
     }
 
 }
